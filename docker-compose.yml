@@ -2,12 +2,14 @@ version: "3.3"
 services:
   mongo:
     image: mongo
+    container_name: mongo
     restart: always
     volumes:
       - ./data:/data/db
 
   parse:
     image: parseplatform/parse-server:${SOFTWARE_VERSION_TAG}
+    container_name: parse
     restart: always
     ports:
       - 172.17.0.1:1337:1337
@@ -23,6 +25,7 @@ services:
 
   dashboard:
     image: parseplatform/parse-dashboard:${SOFTWARE_VERSION_TAG}
+    container_name: dashboard
     restart: always
     ports:
       - "172.17.0.1:4040:4040"
