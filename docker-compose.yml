@@ -8,7 +8,7 @@ services:
       - ./data:/data/db
 
   parse:
-    image: parseplatform/parse-server:${SOFTWARE_VERSION_TAG}
+    image: elestio/parse-server:${SOFTWARE_VERSION_TAG}
     container_name: parse
     restart: always
     ports:
@@ -24,7 +24,7 @@ services:
       - PARSE_SERVER_MASTER_KEY_IPS=0.0.0.0/0
 
   dashboard:
-    image: parseplatform/parse-dashboard:${SOFTWARE_VERSION_TAG}
+    image: elestio/parse-dashboard:${SOFTWARE_VERSION_TAG}
     container_name: dashboard
     restart: always
     ports:
