@@ -22,7 +22,9 @@ services:
       - PARSE_SERVER_START_LIVE_QUERY_SERVER=1
       - PARSE_SERVER_LIVE_QUERY={"classNames":["people","monitor"]}
       - PARSE_SERVER_MASTER_KEY_IPS=0.0.0.0/0
-
+    volumes:
+      - ./parse/cloud:/parse-server/cloud
+      - ./parse/config:/parse-server/config
   dashboard:
     image: elestio/parse-dashboard:${SOFTWARE_VERSION_TAG}
     container_name: dashboard
